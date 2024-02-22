@@ -1,0 +1,24 @@
+name: aae-in-blues
+channels:
+- conda-forge
+dependencies:
+- python>=3.11
+- ipython
+- jupyter
+- jupyterlab
+- numpy
+- pandas
+- pyarrow
+- matplotlib
+- mplleaflet
+- ipympl
+- seaborn
+- plotnine
+- pyproj
+- requests
+- openpyxl
+- jupyter_nbextensions_configurator
+- jupyter_contrib_nbextensions
+- catboost
+- optuna
+- shap
