@@ -7,7 +7,7 @@ Romeo De Timmerman
 project summary
 ---------------
 
-<insert project summary>
+This repository contains a quantitative analysis of blues lyrics performed by artists across time and socio-cultural groups. It specifically trains a gradient boosting classifier using the Catboost library to predict the pronunciation of certain words. This analysis is a part of [my PhD project](https://research.flw.ugent.be/en/projects/indexical-expressions-authenticity-mixed-method-inquiry-stylistic-use-african-american) on the use of African American English features as indexical expressions of authenticity in blues music. 
 
 
 project structure
@@ -38,4 +38,6 @@ PROJECT DIRECTORY
     ├── environment.yml    <- YAML file to build conda environment used in this project
     │
     └── src                <- Python source code
+
+(this project structure based on the Cookiecutter Data Science template)
 ```
