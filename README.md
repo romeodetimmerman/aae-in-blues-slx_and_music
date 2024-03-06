@@ -39,5 +39,5 @@ PROJECT DIRECTORY
     │
     └── src                <- Python source code
 
-(this project structure based on the Cookiecutter Data Science template)
+(this project structure is based on the Cookiecutter Data Science template)
 ```
