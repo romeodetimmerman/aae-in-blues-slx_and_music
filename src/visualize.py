@@ -102,36 +102,53 @@ blues_artist_mean = (
 
 custom_colors = sns.color_palette("muted", 9)  # define custom colors for each group
 
+groups = [
+    "1960sAA",
+    "1960snonAA_US",
+    "1960snonAA_nonUS",
+    "1980sAA",
+    "1980snonAA_US",
+    "1980snonAA_nonUS",
+    "2010sAA",
+    "2010snonAA_US",
+    "2010snonAA_nonUS",
+]
+
 g = sns.catplot(
     data=blues_artist_mean,
     x="aae_realization",
     y="artist",
     hue="group",
-    hue_order=[
-        "1960sAA",
-        "1960snonAA_US",
-        "1960snonAA_nonUS",
-        "1980sAA",
-        "1980snonAA_US",
-        "1980snonAA_nonUS",
-        "2010sAA",
-        "2010snonAA_US",
-        "2010snonAA_nonUS",
-    ],
+    hue_order=groups,
     palette=custom_colors,
-    height=10,
-    aspect=1.5,
+    height=13.5,
+    aspect=1.75,
+    s=75,
+    legend=False,
 )  # create the catplot
 
 group_means = blues_artist_mean.groupby("group")["aae_realization"].mean()
 for group, color in zip(group_means.index, custom_colors):
     mean_value = group_means[group]
     plt.axvline(
-        mean_value, color=color, linestyle="--"
+        mean_value, color=color, linestyle="--", linewidth=3
     )  # calculate group means and add as horizontal lines
 
+plt.legend(
+    title="group",
+    labels=groups,
+    bbox_to_anchor=(0.9, 0.65),
+    fontsize=20,
+    title_fontsize=25,
+    frameon=False,
+)
+
+g.set_axis_labels("mean AAE realization", "artist", fontsize=25)
+g.set_xticklabels(fontsize=22.5)
+g.set_yticklabels(fontsize=20)
+
+plt.tight_layout()
 plt.xlim(0.5, 1)
-plt.xlabel("mean AAE realization")
 plt.savefig("../reports/figures/mean_aae_realizations.png", dpi=600)
 plt.show()
 
