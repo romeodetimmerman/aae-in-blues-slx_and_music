@@ -85,7 +85,7 @@ sorted_feature_list = feature_list[sorted_indices]
 sorted_feature_groups = [feature_groups[i] for i in sorted_indices]
 
 plt.boxplot(sorted_feature_groups, labels=sorted_feature_list, vert=False)
-plt.xlabel("SHAP values", size=15)
+plt.xlabel("Shapley values", size=15)
 plt.ylabel("feature", size=15)
 plt.xticks(rotation=0)
 plt.savefig("../reports/figures/shap_box_feature.png", dpi=600, bbox_inches="tight")
