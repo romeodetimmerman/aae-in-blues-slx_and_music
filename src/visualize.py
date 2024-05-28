@@ -52,14 +52,14 @@ plt.show()
 
 
 # waterfall plot for individual predictions
-shap.plots.waterfall(shap_values[0], show=False)
-plt.savefig("../reports/figures/shap_waterfall_679.png", dpi=600, bbox_inches="tight")
+shap.plots.waterfall(shap_values[180], show=False)
+plt.savefig("../reports/figures/shap_waterfall_180.png", dpi=600, bbox_inches="tight")
 plt.show()
 
 
 # waterfall plot for individual predictions
-shap.plots.waterfall(shap_values[17], show=False)
-plt.savefig("../reports/figures/shap_waterfall_105.png", dpi=600, bbox_inches="tight")
+shap.plots.waterfall(shap_values[286], show=False)
+plt.savefig("../reports/figures/shap_waterfall_286.png", dpi=600, bbox_inches="tight")
 plt.show()
 
 
