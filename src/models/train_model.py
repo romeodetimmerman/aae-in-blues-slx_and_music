@@ -8,12 +8,12 @@ from sklearn.metrics import f1_score
 seed = 42
 
 # import data
-X_train = pd.read_csv("../data/processed/X_train.csv", na_filter=False, index_col=0)
-X_val = pd.read_csv("../data/processed/X_val.csv", na_filter=False, index_col=0)
-X_test = pd.read_csv("../data/processed/X_test.csv", na_filter=False, index_col=0)
-y_train = pd.read_csv("../data/processed/y_train.csv", index_col=0)
-y_val = pd.read_csv("../data/processed/y_val.csv", index_col=0)
-y_test = pd.read_csv("../data/processed/y_test.csv", index_col=0)
+X_train = pd.read_csv("../../data/processed/X_train.csv", na_filter=False, index_col=0)
+X_val = pd.read_csv("../../data/processed/X_val.csv", na_filter=False, index_col=0)
+X_test = pd.read_csv("../../data/processed/X_test.csv", na_filter=False, index_col=0)
+y_train = pd.read_csv("../../data/processed/y_train.csv", index_col=0)
+y_val = pd.read_csv("../../data/processed/y_val.csv", index_col=0)
+y_test = pd.read_csv("../../data/processed/y_test.csv", index_col=0)
 
 # define cat features
 cat_features = list(X_train.select_dtypes("object").columns)

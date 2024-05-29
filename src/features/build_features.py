@@ -8,7 +8,7 @@ from sklearn.metrics import f1_score
 seed = 42
 
 # import data
-df = pd.read_csv("../data/interim/corpus_studio_pre_processed.csv")
+df = pd.read_csv("../../data/interim/corpus_studio_pre_processed.csv")
 df = df.fillna("")
 df.isna().sum()
 df.head()
@@ -31,9 +31,9 @@ X_train, X_val, y_train, y_val = train_test_split(
 )
 
 # save sets
-X_train.to_csv("../data/processed/X_train.csv")
-X_val.to_csv("../data/processed/X_val.csv")
-X_test.to_csv("../data/processed/X_test.csv")
-y_train.to_csv("../data/processed/y_train.csv")
-y_val.to_csv("../data/processed/y_val.csv")
-y_test.to_csv("../data/processed/y_test.csv")
+X_train.to_csv("../../data/processed/X_train.csv")
+X_val.to_csv("../../data/processed/X_val.csv")
+X_test.to_csv("../../data/processed/X_test.csv")
+y_train.to_csv("../../data/processed/y_train.csv")
+y_val.to_csv("../../data/processed/y_val.csv")
+y_test.to_csv("../../data/processed/y_test.csv")

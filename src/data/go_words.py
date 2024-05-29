@@ -20,4 +20,4 @@ def generate_go_word_list(file):
 
 
 if __name__ == "__main__":
-    generate_go_word_list(file="../data/raw/corpus_studio.csv")
+    generate_go_word_list(file="../../data/raw/corpus_studio.csv")

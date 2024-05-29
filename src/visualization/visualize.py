@@ -11,16 +11,16 @@ sns.set_style("white")
 sns.set_context("talk")
 
 # import data
-df = pd.read_csv("../data/interim/corpus_studio_pre_processed.csv")
-X_test = pd.read_csv("../data/processed/X_test.csv", na_filter=False, index_col=0)
-y_test = pd.read_csv("../data/processed/y_test.csv", index_col=0)
+df = pd.read_csv("../../data/interim/corpus_studio_pre_processed.csv")
+X_test = pd.read_csv("../../data/processed/X_test.csv", na_filter=False, index_col=0)
+y_test = pd.read_csv("../../data/processed/y_test.csv", index_col=0)
 
 # create group variable
 df["group"] = df["time"] + df["social_group"]
 
 # import model
 model = CatBoostClassifier()
-model.load_model(fname="../models/catboost_model.json", format="json")
+model.load_model(fname="../../models/catboost_model.json", format="json")
 
 # initialize shap
 shap.initjs()
@@ -41,25 +41,25 @@ sns.heatmap(cm_df, annot=True, fmt="g")
 plt.title("confusion matrix")
 plt.ylabel("actual values")
 plt.xlabel("predicted values")
-plt.savefig("../figures/confusion_matrix.png", dpi=600)
+plt.savefig("../../figures/confusion_matrix.png", dpi=600)
 plt.show()
 
 
 # mean shap values for each feature
 shap.plots.bar(shap_values, show=False)
-plt.savefig("../figures/shap_bar.png", dpi=600, bbox_inches="tight")
+plt.savefig("../../figures/shap_bar.png", dpi=600, bbox_inches="tight")
 plt.show()
 
 
 # waterfall plot for individual predictions
 shap.plots.waterfall(shap_values[180], show=False)
-plt.savefig("../figures/shap_waterfall_180.png", dpi=600, bbox_inches="tight")
+plt.savefig("../../figures/shap_waterfall_180.png", dpi=600, bbox_inches="tight")
 plt.show()
 
 
 # waterfall plot for individual predictions
 shap.plots.waterfall(shap_values[286], show=False)
-plt.savefig("../figures/shap_waterfall_286.png", dpi=600, bbox_inches="tight")
+plt.savefig("../../figures/shap_waterfall_286.png", dpi=600, bbox_inches="tight")
 plt.show()
 
 
@@ -88,7 +88,7 @@ plt.boxplot(sorted_feature_groups, labels=sorted_feature_list, vert=False)
 plt.xlabel("Shapley values", size=15)
 plt.ylabel("feature", size=15)
 plt.xticks(rotation=0)
-plt.savefig("../figures/shap_box_feature.png", dpi=600, bbox_inches="tight")
+plt.savefig("../../figures/shap_box_feature.png", dpi=600, bbox_inches="tight")
 plt.show()
 
 
@@ -149,7 +149,7 @@ g.set_yticklabels(fontsize=20)
 
 plt.tight_layout()
 plt.xlim(0.5, 1)
-plt.savefig("../figures/mean_aae_realizations.png", dpi=600)
+plt.savefig("../../figures/mean_aae_realizations.png", dpi=600)
 plt.show()
 
 
@@ -186,7 +186,7 @@ g = sns.catplot(
 )
 g.set_xlabels("mean AAE realization")
 g.set_ylabels("AAE feature")
-plt.savefig("../figures/point_plots_by_group.png", dpi=600)
+plt.savefig("../../figures/point_plots_by_group.png", dpi=600)
 plt.show()
 
 
@@ -224,7 +224,7 @@ g = sns.catplot(
 )
 g.set_xlabels("mean AAE realization")
 g.set_ylabels("AAE feature")
-plt.savefig("../figures/point_plots_by_group_and_song_type.png", dpi=600)
+plt.savefig("../../figures/point_plots_by_group_and_song_type.png", dpi=600)
 plt.show()
 
 
@@ -259,5 +259,5 @@ g.set(
     xticks=[0, 0.25, 0.5, 0.75, 1],
     xticklabels=["0", "0,25", "0.5", "0.75", "1"],
 )
-plt.savefig("../figures/point_plots_by_group_artist_and_song_type.png", dpi=600)
+plt.savefig("../../figures/point_plots_by_group_artist_and_song_type.png", dpi=600)
 plt.show()

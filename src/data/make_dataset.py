@@ -158,14 +158,16 @@ def make_data(df_codes_raw, df_context_raw, df_year_raw):
 
     # export interim dataframe
     df_final.to_csv(
-        "../data/interim/corpus_studio_pre_processed.csv", index=False, encoding="UTF-8"
+        "../../data/interim/corpus_studio_pre_processed.csv",
+        index=False,
+        encoding="UTF-8",
     )
 
 
 if __name__ == "__main__":
-    df_codes_raw = pd.read_csv("../data/raw/corpus_studio.csv")
-    df_context_raw = pd.read_csv("../data/raw/corpus_studio_context.csv")
-    df_year_raw = pd.read_csv("../data/raw/corpus_year.csv")
+    df_codes_raw = pd.read_csv("../../data/raw/corpus_studio.csv")
+    df_context_raw = pd.read_csv("../../data/raw/corpus_studio_context.csv")
+    df_year_raw = pd.read_csv("../../data/raw/corpus_year.csv")
     make_data(
         df_codes_raw=df_codes_raw,
         df_context_raw=df_context_raw,
