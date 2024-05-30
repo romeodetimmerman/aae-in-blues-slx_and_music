@@ -135,4 +135,4 @@ xgboost_score = f1_score(y_test, xgboost_preds)
 print(f"xgboost - f1-score of the final model is {xgboost_score}")
 
 # saving catboost model
-final_catboost_model.save_model(fname="../models/catboost_model.json", format="json")
+final_catboost_model.save_model(fname="../../models/catboost_model.json", format="json")
