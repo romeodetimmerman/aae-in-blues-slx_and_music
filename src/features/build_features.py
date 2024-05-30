@@ -21,13 +21,17 @@ y = df["aae_realization"]
 X = df.drop(columns="aae_realization")
 
 # create test set
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, stratify=y, test_size=0.2, random_state=seed
+X_train_temp, X_test, y_train_temp, y_test = train_test_split(
+    X, y, test_size=0.15, stratify=y, random_state=seed
 )
 
 # create validation set
 X_train, X_val, y_train, y_val = train_test_split(
-    X_train, y_train, stratify=y_train, test_size=0.2, random_state=seed
+    X_train_temp,
+    y_train_temp,
+    test_size=0.17647,
+    stratify=y_train_temp,
+    random_state=seed,
 )
 
 # save sets
