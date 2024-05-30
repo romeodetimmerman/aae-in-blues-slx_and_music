@@ -1,8 +1,5 @@
 import pandas as pd
-import catboost
-from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import f1_score
 
 # set seed
 seed = 42
