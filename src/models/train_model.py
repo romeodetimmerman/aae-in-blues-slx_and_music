@@ -33,8 +33,7 @@ def catboost_objective(trial):
     }
 
     model = CatBoostClassifier(
-        **params,
-        early_stopping_rounds=100,
+        **params, early_stopping_rounds=100, allow_writing_files=False
     )
 
     model.fit(
@@ -106,7 +105,7 @@ print()
 
 # training final models
 final_catboost_model = CatBoostClassifier(
-    **catboost_study.best_params, early_stopping_rounds=100
+    **catboost_study.best_params, early_stopping_rounds=100, allow_writing_files=False
 )
 final_catboost_model.fit(
     X_train,
