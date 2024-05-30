@@ -124,7 +124,7 @@ def make_data(df_codes_raw, df_context_raw, df_year_raw):
 
     # drop redundant columns
     df_merged.drop(
-        columns=["Created", "Document name", "Code", "Beginning", "Document group"],
+        columns=["Document name", "Code", "Beginning", "Document group"],
         inplace=True,
     )
 
@@ -139,8 +139,11 @@ def make_data(df_codes_raw, df_context_raw, df_year_raw):
         right_on=["artist", "song", "type"],
     )
 
+    # drop duplicate rows again
+    df_final.drop_duplicates(subset="Created", keep="first", inplace=True)
+
     # drop redundant columns
-    df_final.drop(columns=["artist", "song", "type"], inplace=True)
+    df_final.drop(columns=["Created", "artist", "song", "type"], inplace=True)
 
     # convert columns names to snake case
     df_final.rename(columns=lambda x: x.lower().replace(" ", "_"), inplace=True)
