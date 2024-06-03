@@ -35,7 +35,9 @@ y_pred = model.predict(X_test)
 
 # generate confusion matrix with final model
 cm = confusion_matrix(y_test, y_pred)
-cm_df = pd.DataFrame(cm, index=["absent", "present"], columns=["absent", "present"])
+cm_df = pd.DataFrame(
+    cm, index=["not_realized", "realized"], columns=["not_realized", "realized"]
+)
 plt.figure(figsize=(10, 8))
 sns.heatmap(cm_df, annot=True, fmt="g")
 plt.title("confusion matrix")
