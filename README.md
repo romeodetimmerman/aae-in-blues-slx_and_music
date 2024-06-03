@@ -4,7 +4,7 @@ Romeo De Timmerman
 
 ## project summary
 
-This repository contains a quantitative analysis of blues lyrics performed by artists across time and socio-cultural groups. It specifically trains a gradient boosting classifier using the Catboost library to predict the use of certain features of African American English in a corpus of 270 studio recorded songs. This analysis is a part of [my PhD project](https://research.flw.ugent.be/en/projects/indexical-expressions-authenticity-mixed-method-inquiry-stylistic-use-african-american) on the use of African American English features as indexical expressions of authenticity in blues music. 
+This repository contains a quantitative analysis of blues lyrics performed by artists across time and socio-cultural groups. It specifically trains a gradient boosting classifier using the Catboost library to predict the use of certain features of African American English in a corpus of 270 studio recorded songs. This analysis is a part of my PhD project on the use of African American English features as indexical expressions of authenticity in blues music. 
 
 
 ## project structure
