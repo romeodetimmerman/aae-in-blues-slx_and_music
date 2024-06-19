@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 import shap
 from catboost import CatBoostClassifier
 from sklearn.metrics import confusion_matrix
@@ -136,9 +137,13 @@ for group, color in zip(group_means.index, custom_colors):
         mean_value, color=color, linestyle="--", linewidth=3
     )  # calculate group means and add as horizontal lines
 
+handles = [
+    mpatches.Patch(color=color, label=group)
+    for color, group in zip(custom_colors, groups)
+]
 plt.legend(
+    handles=handles,
     title="group",
-    labels=groups,
     bbox_to_anchor=(0.9, 0.65),
     fontsize=20,
     title_fontsize=25,
