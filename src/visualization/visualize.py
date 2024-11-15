@@ -268,3 +268,22 @@ g.set(
 )
 plt.savefig("../../figures/point_plots_by_group_artist_and_song_type.png", dpi=600)
 plt.show()
+
+
+# boxplot for all features
+shap_values_df = pd.DataFrame(shap_values.values, columns=X_test.columns)
+
+mean_abs_shap = shap_values_df.abs().mean().sort_values(ascending=False)
+
+shap_values_sorted = shap_values_df[mean_abs_shap.index]
+
+shap_long_sorted = shap_values_sorted.melt(var_name="Feature", value_name="SHAP Value")
+
+plt.figure(figsize=(12, 8))
+sns.boxplot(data=shap_long_sorted, x="SHAP Value", y="Feature", orient="h")
+plt.title("SHAP Value Distribution by Feature (Sorted by Importance)", fontsize=16)
+plt.xlabel("SHAP Value", fontsize=14)
+plt.ylabel("Feature", fontsize=14)
+plt.tight_layout()
+plt.savefig("../../figures/shap_box_all_features.png", dpi=600)
+plt.show()
