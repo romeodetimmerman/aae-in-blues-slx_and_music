@@ -1,3 +1,5 @@
+# Replication Code for "Covering Blue Voices: African American English and Authenticity in Blues Covers"
+
 ## author
 
 Romeo De Timmerman
